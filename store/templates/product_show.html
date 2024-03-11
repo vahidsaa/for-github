@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+
+
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>مشاوره و سفارش </p>
+                    <h1>09196228188 / 09199638223 / 09356202245</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- single product -->
+<div class="single-product mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="single-product-img">
+                    <img src="{{ product_show.image.url }}" alt="{{product_show.name}}">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="single-product-content">
+                    <h3 class="text-center">{{ product_show.name }}</h3>
+                    <p class="single-product-pricing text-center"><span></span> {{ product_show.description_up }} </p>
+                    <p >{{ product_show.description }}</p>
+                {% if product_show.description_sub %}
+                    <p class="sub-p text-center">{{ product_show.description_sub }}.</p>
+                    {% else %}
+                    {% endif %}
+                    <div class="single-product-form text-center ">
+                        <!-- <form action="index_2.html">
+                            <input type="number" placeholder="1">
+                        </form> -->
+                        <p><strong>  مشاوره و سفارش :  </strong>09356202245 / 09199638223 / 09196228188</p>
+                            <p>یا از طریق پیام رسان</p>
+                        <ul class="product-share text-center">
+                            <li><a href=""><i class="ri-whatsapp-line"></i></a></li>
+                            <li><a href=""><i class="ri-telegram-line"></i></a></li>
+                            <li><a href=""><i class="ri-instagram-line"></i></a></li>
+                            <li><a href=""><i class="ri-chat-check-line"></i></a></li>
+                        </ul><br>
+                        <a href="{% url 'home' %}" class="cart-btn">صفحه اصلی</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end single product -->
+
+<!-- more products -->
+<div class="more-products mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="section-title">	
+                    <h3><span class="orange-text"> پیشنهادی </span> </h3>
+                    <!-- <p></p> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="single-product-item">
+                    <div class="product-image">
+                        <a href="{% url 'shop' %}"><img src="{{ posti.image.url }}" alt=""></a>
+                    </div>
+                    <h3>{{ posti.name }}</h3>
+                    <a href="{% url 'shop' %}" class="cart-btn">مشاهده</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="single-product-item">
+                    <div class="product-image">
+                        <a href="{% url 'product_show' chap.id %}"><img src="{{ chap.image.url }}" alt=""></a>
+                    </div>
+                    <h3>{{ chap.name }}</h3>
+                    <a href="{% url 'product_show' chap.id %}" class="cart-btn">مشاهده</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
+                <div class="single-product-item">
+                    <div class="product-image">
+                        <a href="{% url 'shop' %}"><img src="{{ ready.image.url }}" alt=""></a>
+                    </div>
+                    <h3>{{ ready.name }}</h3>
+                    <a href="{% url 'shop' %}" class="cart-btn">مشاهده</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
